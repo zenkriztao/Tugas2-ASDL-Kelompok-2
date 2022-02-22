@@ -25,7 +25,7 @@ public class MainDraft {
                     for(int i = 1; i <= 100000000; i++){
                             System.out.print("    Data ke-" + i + ": ");
                             int d = input.nextInt();
-                            llist.push(d);
+                            llist.tambahDataAwal(d);
                         if(d == 0){ 
                             sign = false; 
                             break;
@@ -59,7 +59,7 @@ public class MainDraft {
                     for(int i = 1; i <= 100000000; i++){
                             System.out.print("    Data ke-" + i + ": ");
                             int d = input.nextInt();
-                            llist.append(d);
+                            llist.tambahDataAkhir(d);
                         if(d == 0){ 
                             sign = false; 
                             break;
@@ -96,7 +96,7 @@ class DLL {
     }
  
     // TAMBAH DATA AWAL
-    public void push(int new_data){
+    public void tambahDataAwal(int new_data){
         Node new_Node = new Node(new_data);
  
         new_Node.next = head;
@@ -158,7 +158,7 @@ class DLL {
     }
  
     // TAMBAH DATA AKHIR
-    public void append(int new_data){
+    public void tambahDataAkhir(int new_data){
         Node new_node = new Node(new_data);
         Node last = head;
         new_node.next = null;
@@ -185,7 +185,7 @@ class DLL {
     public void printlist(Node node)
     {
         Node last = null;
-        System.out.println("    Forward Direction");
+        System.out.println("    Urutan data dari depan");
         System.out.print("    ");
         while (node != null) {
             System.out.print(node.data + " ");
@@ -193,7 +193,7 @@ class DLL {
             node = node.next;
         }
         System.out.println();
-        System.out.println("    Reverse Direction");
+        System.out.println("    Urutan data kebalikan");
         System.out.print("    ");
         while (last != null) {
             System.out.print(last.data + " ");
