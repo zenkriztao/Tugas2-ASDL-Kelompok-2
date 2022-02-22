@@ -13,10 +13,10 @@ Nama | NIM | Link Github
 --------- | --------- | ---------
 Muhammad Rizki Ramadhan | 09021382126122 | github.com/zenkriztao
 Abdullah Farauk | 09021382126124 | github.com/stardenbart
-Muhamad Dwirizqy Wimbassa | 09021382126126 | github.com/
+Muhamad Dwirizqy Wimbassa | 09021382126126 | github.com/TheNameIsK
 Kaka Inochi | 09021382126128 | github.com/s3nyu
 Arrahmanul Hakim | 09021382126130 | github.com/hualakowski
-Cinta Indriyani Putri Nabila | 09021382126132 | github.com/
+Cinta Indriyani Putri Nabila | 09021382126132 | github.com/cintaindriyanipn
 
 ----
 
