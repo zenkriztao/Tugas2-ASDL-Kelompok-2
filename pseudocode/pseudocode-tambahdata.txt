@@ -1,0 +1,47 @@
+class DoublyLinkedList
+  **Initialize with no input**
+    head -> null
+    taill -> null
+
+**Method untuk set node menjadi head**
+    *Input - node*
+        if head is null
+            head -> node
+            tail -> node
+        return
+                (insert before node method with input head and node)
+
+**Method untuk set node menjadi tali**
+    *Input - node*
+        if tail is null
+            (set node as head method with input node)
+                (insert after node method with input tail and node)
+
+     
+**Method untuk memasukkan node sebelum**
+    *Input - node before, node to insert*
+        if node to insert = head and node to insert = tail
+            return
+        (remove node method with input node to insert)
+        node to insert.prev -> node before.prev
+        node to insert.next -> node before
+
+        if node before.prev is null
+            head -> node to insert
+        else
+            node before.prev.next -> node to insert
+        node before.prev -> node to insert
+    
+**Method untuk memasukkan node setelah**
+    *Input - node after, node to insert*
+        if node to insert = head and node to insert = tail
+            return
+        (remove node method with input node to insert)
+        node to insert.prev -> node after
+        node to insert.next -> node after.next
+
+        if node after.next is null
+            tail -> node to insert
+        else
+            node after.next.prev -> node to insert
+        node after.next -> node to insert

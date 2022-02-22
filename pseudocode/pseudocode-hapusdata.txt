@@ -1,0 +1,30 @@
+class DoublyLinkedList
+  **Initialize with no input**
+    head -> null
+    taill -> null 
+
+**Method untuk menghapus node dengan value**
+    *Input - value*
+    node -> head
+    while node is not null
+        node to remove -> node
+        node -> node.next
+        if node to remove.value = value
+            (remove node method with input node to remove)    
+               
+**Method untuk menghapus sebuah node**
+    *Input - node to remove*
+        if node to remove = head
+            head -> head.next
+        if node to remove = tail
+            tail -> tail.prev
+            (remove node bonds method with input node to remove)
+
+**Method untuk menhapus node bonds**
+    *Input - node to remove*
+        if node to remove.prev is not null
+            node to remove.prev.next -> node.next
+        if node to remove.next is not null
+            node to remove.next.prev -> node.prev
+    node to remove.prev -> null
+    node to remove.next -> null

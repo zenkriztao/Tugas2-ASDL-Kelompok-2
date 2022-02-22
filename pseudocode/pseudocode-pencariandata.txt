@@ -1,0 +1,20 @@
+class DoublyLinkedList
+  **Initialize with no input**
+    head -> null
+    taill -> null
+
+**Method to check if linked list contains a node with value**
+    *Input - value*
+    node -> head
+    while node is not null
+        if node.value = value
+            return True
+        node -> node.next
+    return False
+      
+    or 
+      
+    node -> head
+    while node is not null and node.value != value
+        node -> node.next
+    return node is not null

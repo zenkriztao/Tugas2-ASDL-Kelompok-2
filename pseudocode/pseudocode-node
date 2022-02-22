@@ -1,0 +1,9 @@
+Pseudocode
+Node class
+
+class Node
+  **Inisialisasi dengan input - value**
+        value -> value
+        prev -> null
+        next -> null
+    Doubly linked list class
