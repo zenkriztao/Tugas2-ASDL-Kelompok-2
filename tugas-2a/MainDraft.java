@@ -36,7 +36,7 @@ public class MainDraft {
                                         "\n    2. Tambah Data Tengah" +
                                         "\n    3. Tambah Data Akhir" +
                                         "\n    4. Cetak Data" +
-                                        "\n    5. Kembali"); // kembali dari penambahan pencet 0. 5 dakgalak nyo
+                                        "\n    5. Kembali");
                                 System.out.print("    Silahkan Pilih (1/2/3/4/5): ");
                                 pilihanPenambahan = input.nextInt();
                                 System.out.println();
@@ -64,14 +64,19 @@ public class MainDraft {
                                         System.out.println("*** OPERASI TAMBAH DATA TENGAH DOUBLE LINKED LIST ***");
                                         System.out.println("\n    INFO: - Masukkan data angka (Integer) \n\t  - Input 000 untuk kembali ke menu sebelumnya\n");
                                         do {
-                                            for (int i = 1; i <= 100000000; i++) {
-                                                System.out.print("    Data ke-" + i + ": ");
-                                                int d = input.nextInt();
-                                                llist.InsertAfter(llist.head.next, d);
-                                                if (d == 000) {
-                                                    sign = false;
-                                                    break;
+                                            try{
+                                                for (int i = 1; i <= 100000000; i++) {
+                                                    System.out.print("    Data ke-" + i + ": ");
+                                                    int d = input.nextInt();
+                                                    llist.InsertAfter(llist.head.next, d);
+                                                    if (d == 000) {
+                                                        sign = false;
+                                                        break;
+                                                    }
                                                 }
+                                            }catch (NullPointerException e){
+                                                System.out.println("    Anda harus menambahkan data dulu untuk mengakses fitur ini.\n");
+                                                break;
                                             }
                                             System.out.println();
                                         } while (sign == true);
@@ -266,7 +271,7 @@ class DLL {
     // TAMBAH DATA TENGAH;
     public void InsertBefore(Node next_node, int new_data){
         if(next_node == null){
-            System.out.println("The given next node can not be NULL");
+            System.out.println("    Anda harus menambahkan data dulu untuk mengakses fitur ini.");
             return;
         }
 
@@ -289,7 +294,7 @@ class DLL {
     // TAMBAH DATA TENGAH;
     public void InsertAfter(Node prev_Node, int new_data){
         if(prev_Node == null){
-            System.out.println("The given previous node cannot be NULL ");
+            System.out.println("    Anda harus menambahkan data dulu untuk mengakses fitur ini.");
             return;
         }
 
