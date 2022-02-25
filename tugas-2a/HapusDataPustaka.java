@@ -1,5 +1,5 @@
-public class HapusDataPustaka {
- public static void main(String[] args) {
+//public class HapusDataPustaka {
+ //public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         LinkedList link = new LinkedList();
         int pilihan;
