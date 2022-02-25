@@ -1,18 +1,11 @@
-package com.coba;
-import java.util.LinkedList;
-import java.util.Scanner;
-
-
-
 public class HapusDataPustaka {
  public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         LinkedList link = new LinkedList();
         int pilihan;
         String sign;
-
-        
-     
+  
+        // data (sementara)
         link.add(30);
         link.add(20);
         link.add(10);
@@ -43,28 +36,25 @@ public class HapusDataPustaka {
                 System.out.println("( Masukan T )");
 
                 sign = input.next();
-                switch(sign){
-                case "Y":
-                link.removeFirst();
-                }
-
+                   switch(sign){
+                   case "Y":
+                   link.removeFirst();
+                   }
                 break;
-
-
+              
                 case 2:
-                System.out.println("\n*** OPERASI HAPUS TENGAH AWAL DOUBLE LINKED LIST ***");
+                System.out.println("\n*** OPERASI HAPUS DATA TENGAH DOUBLE LINKED LIST ***");
                 System.out.println("\n    INFO: - Masukan Y (ENTER) untuk menghapus data \n\t  - Masukan T untuk kembali ke menu sebelumnya\n");
                 System.out.println("Yakin ingin menghapus data di tengah ? Y ");
                 System.out.println("Yakin ingin menghapus data di tengah ? Y ");
                 System.out.println("( Masukan T )");
 
                 sign = input.next();
-                switch(sign){
-                case "Y":
-                link.remove(link.size() / 2);
-                }
+                   switch(sign){
+                   case "Y":
+                   link.remove(link.size() / 2);
+                   }
                 break;
-
 
                 case 3:
                 System.out.println("\n*** OPERASI HAPUS DATA AKHIR DOUBLE LINKED LIST ***");
@@ -74,16 +64,13 @@ public class HapusDataPustaka {
                 System.out.println("( Masukan T )"); 
               
                 sign = input.next();
-                switch(sign){
-                case "Y":
-                link.removeLast();
-                }
-
-                break;
-
-
+                   switch(sign){
+                   case "Y":
+                   link.removeLast();
+                   }
+                 break;
+              
                 case 4:
-                System.out.println("adasdsad");
                 System.out.println("\n*** CETAK DATA DOUBLE LINKED LIST ***\n");
                 System.out.println(link);
                 System.out.println("\n    INFO: - Masukan 5 untuk kembali ke menu sebelumnya\n");
