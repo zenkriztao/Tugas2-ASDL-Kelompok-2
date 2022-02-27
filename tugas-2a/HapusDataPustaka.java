@@ -1,5 +1,8 @@
-//public class HapusDataPustaka {
- //public static void main(String[] args) {
+/* import java.util.LinkedList;
+import java.util.Scanner;
+
+public class HapusDataPustaka {
+ public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         LinkedList link = new LinkedList();
         int pilihan;
@@ -83,3 +86,4 @@
     }
 }
 
+ */

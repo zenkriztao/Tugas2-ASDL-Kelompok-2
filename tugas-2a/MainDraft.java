@@ -1,301 +1,339 @@
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class MainDraft {
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
         DLL llist = new DLL();
+        LinkedList link = new LinkedList();
         int pilihanLinkedList;
         int pilihanOperasi;
+
+        /* //data (sementara)
+        link.add(30);
+        link.add(20);
+        link.add(10);
+        link.add(99);
+        link.add(200);
+        System.out.println("\nDATA : " + link); */
+
         do {
-        System.out.println("-_- DOUBLE LINKED LIST -_-");
-        System.out.print("Silahkan pilih jenis Double Linked List :\n" +
+            System.out.println("-_- DOUBLE LINKED LIST -_-");
+            System.out.print("Silahkan pilih jenis Double Linked List :\n" +
                             "1. Manual.\n" +
                             "2. Pustaka.\n" +
                             "3. Keluar.\n" +
                             "Input pilihan : ");
-        pilihanLinkedList = input.nextInt();
-        System.out.println();
-        switch (pilihanLinkedList) {
-            case 1:
-                do {
-                    System.out.println("_-_ MANUAL DOUBLE LINKED LIST _-_");
-                    System.out.print("Silahkan pilih operasi yang akan di lakukan :\n" +
+            pilihanLinkedList = input.nextInt();
+            System.out.println();
+            switch (pilihanLinkedList) {
+                case 1:
+                    do {
+                        System.out.println("_-_ MANUAL DOUBLE LINKED LIST _-_");
+                        System.out.print("Silahkan pilih operasi yang akan di lakukan :\n" +
                             "1. Penambahan Data.\n" +
                             "2. Penghapusan Data.\n" +
                             "3. Pencarian/pengubahan Data.\n" +
                             "4. Kembali.\n" +
                             "Input pilihan : ");
-                    pilihanOperasi = input.nextInt();
-                    System.out.println( );
-                    switch (pilihanOperasi) {
-                        case 1:
-                            int pilihanPenambahan;
-                            do {
-                                System.out.println("*** OPERASI TAMBAH DATA DOUBLE LINKED LIST ***");
-                                System.out.println("    1. Tambah Data Awal" +
+                        pilihanOperasi = input.nextInt();
+                        System.out.println( );
+                        switch (pilihanOperasi) {
+                            case 1:
+                                int pilihanPenambahan;
+                                do {
+                                    System.out.println("*** OPERASI TAMBAH DATA DOUBLE LINKED LIST ***");
+                                    System.out.println("    1. Tambah Data Awal" +
                                         "\n    2. Tambah Data Tengah" +
                                         "\n    3. Tambah Data Akhir" +
                                         "\n    4. Cetak Data" +
                                         "\n    5. Kembali");
-                                System.out.print("    Silahkan Pilih (1/2/3/4/5): ");
-                                pilihanPenambahan = input.nextInt();
-                                System.out.println();
-                                boolean sign = true;
+                                    System.out.print("    Silahkan Pilih (1/2/3/4/5): ");
+                                    pilihanPenambahan = input.nextInt();
+                                    System.out.println();
+                                    boolean sign = true;
 
-                                switch (pilihanPenambahan) {
-                                    case 1:
-                                        System.out.println("*** OPERASI TAMBAH DATA AWAL DOUBLE LINKED LIST ***");
-                                        System.out.println("\n    INFO: - Masukkan data angka (Integer) \n\t  - Input 000 untuk kembali ke menu sebelumnya\n");
-                                        do {
-                                            for (int i = 1; i <= 100000000; i++) {
-                                                System.out.print("    Data ke-" + i + ": ");
-                                                int d = input.nextInt();
-                                                llist.tambahDataAwal(d);
-                                                if (d == 000) {
-                                                    sign = false;
-                                                    break;
-                                                }
-                                            }
-                                            System.out.println();
-                                        } while (sign == true);
-                                        break;
-
-                                    case 2:
-                                        System.out.println("*** OPERASI TAMBAH DATA TENGAH DOUBLE LINKED LIST ***");
-                                        System.out.println("\n    INFO: - Masukkan data angka (Integer) \n\t  - Input 000 untuk kembali ke menu sebelumnya\n");
-                                        do {
-                                            try{
+                                    switch (pilihanPenambahan) {
+                                        case 1:
+                                            System.out.println("*** OPERASI TAMBAH DATA AWAL DOUBLE LINKED LIST ***");
+                                            System.out.println("\n    INFO: - Masukkan data angka (Integer) \n\t  - Input 000 untuk kembali ke menu sebelumnya\n");
+                                            do {
                                                 for (int i = 1; i <= 100000000; i++) {
                                                     System.out.print("    Data ke-" + i + ": ");
                                                     int d = input.nextInt();
-                                                    llist.InsertAfter(llist.head.next, d);
+                                                    llist.tambahDataAwal(d);
                                                     if (d == 000) {
                                                         sign = false;
                                                         break;
                                                     }
                                                 }
-                                            }catch (NullPointerException e){
-                                                System.out.println("    Anda harus menambahkan data dulu untuk mengakses fitur ini.\n");
-                                                break;
-                                            }
-                                            System.out.println();
-                                        } while (sign == true);
+                                                System.out.println();
+                                            } while (sign == true);
                                         break;
 
-                                    case 3:
-                                        System.out.println("*** OPERASI TAMBAH DATA AKHIR DOUBLE LINKED LIST ***");
-                                        System.out.println("\n    INFO: - Masukkan data angka (Integer) \n\t  - Input 000 untuk kembali ke menu sebelumnya\n");
-                                        do {
-                                            for (int i = 1; i <= 100000000; i++) {
-                                                System.out.print("    Data ke-" + i + ": ");
-                                                int d = input.nextInt();
-                                                llist.tambahDataAkhir(d);
-                                                if (d == 000) {
-                                                    sign = false;
+                                        case 2:
+                                            System.out.println("*** OPERASI TAMBAH DATA TENGAH DOUBLE LINKED LIST ***");
+                                            System.out.println("\n    INFO: - Masukkan data angka (Integer) \n\t  - Input 000 untuk kembali ke menu sebelumnya\n");
+                                            do {
+                                                try{
+                                                    for (int i = 1; i <= 100000000; i++) {
+                                                        System.out.print("    Data ke-" + i + ": ");
+                                                        int d = input.nextInt();
+                                                        llist.InsertAfter(llist.head.next, d);
+                                                        if (d == 000) {
+                                                            sign = false;
+                                                            break;
+                                                        }
+                                                    }
+                                                }catch (NullPointerException e){
+                                                    System.out.println("    Anda harus menambahkan data dulu untuk mengakses fitur ini.\n");
                                                     break;
                                                 }
-                                            }
+                                                System.out.println();
+                                            } while (sign == true);
+                                        break;
+
+                                        case 3:
+                                            System.out.println("*** OPERASI TAMBAH DATA AKHIR DOUBLE LINKED LIST ***");
+                                            System.out.println("\n    INFO: - Masukkan data angka (Integer) \n\t  - Input 000 untuk kembali ke menu sebelumnya\n");
+                                            do {
+                                                for (int i = 1; i <= 100000000; i++) {
+                                                    System.out.print("    Data ke-" + i + ": ");
+                                                    int d = input.nextInt();
+                                                    llist.tambahDataAkhir(d);
+                                                    if (d == 000) {
+                                                        sign = false;
+                                                        break;
+                                                    }
+                                                }
+                                                System.out.println();
+                                            } while (sign == true);
+                                        break;
+
+                                        case 4:
+                                            System.out.println("*** CETAK DATA DOUBLE LINKED LIST ***\n");
+                                            llist.printlist(llist.head);
+                                            System.out.println("\n    INFO: - Input 0 untuk kembali ke menu sebelumnya");
+                                            System.out.print("\n    Input user: ");
+                                            input.nextInt();
                                             System.out.println();
-                                        } while (sign == true);
-                                        break;
-
-                                    case 4:
-                                        System.out.println("*** CETAK DATA DOUBLE LINKED LIST ***\n");
-                                        llist.printlist(llist.head);
-                                        System.out.println("\n    INFO: - Input 0 untuk kembali ke menu sebelumnya");
-                                        System.out.print("\n    Input user: ");
-                                        input.nextInt();
-                                        System.out.println();
-                                        break;
+                                            break;
                                     
-                                    case 5:
-                                    break;
+                                        case 5:
+                                        break;
 
-                                    default:
-                                    System.out.println("    Pilihan tidak valid.\n");
-                                }
-                            } while (pilihanPenambahan != 5);
+                                        default:
+                                        System.out.println("    Pilihan tidak valid.\n");
+                                    }
+                                } while (pilihanPenambahan != 5);
                             break;
-                        case 2:
-                            int pilihanPenghapusan;
-                            do {
-                                System.out.println("--- PENGHAPUSAN DATA DOUBLE LINKED LIST ---");
-                                System.out.print("    Silahkan pilih letak data yang akan di hapus :\n" +
+
+                            case 2:
+                                int pilihanPenghapusan;
+                                do {
+                                    System.out.println("--- PENGHAPUSAN DATA DOUBLE LINKED LIST ---");
+                                    System.out.print("    Silahkan pilih letak data yang akan di hapus :\n" +
                                         "    1. Penghapusan Data Awal.\n" +
                                         "    2. Penghapusan Data Tengah.\n" +
                                         "    3. Penghapusan Data Akhir.\n" +
                                         "    4. Cetak Data.\n" +
                                         "    5. Kembali.\n" +
                                         "    Masukkan Pilihan : ");
-                                pilihanPenghapusan = input.nextInt();
-                                System.out.println();
-                                switch (pilihanPenghapusan) {
-                                    case 1:
-                                        System.out.println("--- Penghapusan Data Awal Linked List ___"); //Sudah pacak digabung samo yang faruk
-                                        System.out.println("    INFO: - Silahkan tekan tombol K untuk menghapus data.\n" +
+                                    pilihanPenghapusan = input.nextInt();
+                                    System.out.println();
+                                    switch (pilihanPenghapusan) {
+                                        case 1:
+                                            System.out.println("--- Penghapusan Data Awal Linked List ___"); //Sudah pacak digabung samo yang faruk
+                                            System.out.println("    INFO: - Silahkan tekan tombol K untuk menghapus data.\n" +
                                                 "    \t  - Tekan tombol Z untuk kembali ke menu sebelumnya.");
-                                        String penghapusanAwal = input.nextLine();
-                                        do {
-                                            System.out.print("    Input user : ");
-                                            penghapusanAwal = input.nextLine();
-                                            try {
-                                                if (penghapusanAwal.equalsIgnoreCase("k")) {
-                                                    llist.hapusAwal();
-                                                    System.out.println("    Penghapusan Data Awal berhasil.");
-                                                } else if (penghapusanAwal.equalsIgnoreCase("z")) {
-                                                    System.out.println();
-                                                } else System.out.println("    Input tidak valid.");
-                                            } catch (NullPointerException w) {
-                                                System.out.println("    Tidak ada data yang bisa dihapus");
-                                            }
-                                        } while (!penghapusanAwal.equalsIgnoreCase("z"));
-                                        break;
-                                    case 3:
-                                        System.out.println("\n___ Penghapusan Data Akhir Linked List ---"); //Masih dakbiso, tail nyo daktau yang mano dari penambahan
-                                        System.out.println("    INFO: - Silahkan tekan tombol K untuk menghapus data.\n" +
-                                                "\t  - Tekan tombol Z untuk kembali ke menu sebelumnya.");
-                                        String penghapusanAkhir = input.nextLine();
-                                        do {
-                                            System.out.print("    Input user : ");
-                                            penghapusanAkhir = input.nextLine();
-                                            try {
-                                                if (penghapusanAkhir.equalsIgnoreCase("k")) {
-                                                    llist.hapusAkhir();
-                                                    System.out.println("    Penghapusan Data Akhir berhasil.");
+                                            String penghapusanAwal = input.nextLine();
+                                            do {
+                                                System.out.print("    Input user : ");
+                                                penghapusanAwal = input.nextLine();
+                                                try {
+                                                    if (penghapusanAwal.equalsIgnoreCase("k")) {
+                                                        llist.hapusAwal();
+                                                        System.out.println("    Penghapusan Data Awal berhasil.");
+                                                    } else if (penghapusanAwal.equalsIgnoreCase("z")) {
+                                                        System.out.println();
+                                                    } else System.out.println("    Input tidak valid.");
+                                                } catch (NullPointerException w) {
+                                                    System.out.println("    Tidak ada data yang bisa dihapus");
                                                 }
-                                                else if (penghapusanAkhir.equalsIgnoreCase("z")){
-                                                    System.out.println();
-                                                } else System.out.println("    Input tidak valid.");
-                                            } catch (NullPointerException w) {
-                                                System.out.println("    Tidak ada data yang bisa dihapus");
-                                            }
-                                        } while (!penghapusanAkhir.equalsIgnoreCase("z"));
+                                            } while (!penghapusanAwal.equalsIgnoreCase("z"));
                                         break;
-                                    case 2:
-                                        System.out.println("___ Penghapusan Data Tengah Linked List ___"); //Masih kacau, dakpaham cakmano caro ngambek urutan node nyo
-                                        System.out.println("    INFO: - data ke-n akan dihapus.\n" +
+                                        case 3:
+                                            System.out.println("\n___ Penghapusan Data Akhir Linked List ---"); //Masih dakbiso, tail nyo daktau yang mano dari penambahan
+                                            System.out.println("    INFO: - Silahkan tekan tombol K untuk menghapus data.\n" +
+                                                "\t  - Tekan tombol Z untuk kembali ke menu sebelumnya.");
+                                            String penghapusanAkhir = input.nextLine();
+                                            do {
+                                                System.out.print("    Input user : ");
+                                                penghapusanAkhir = input.nextLine();
+                                                try {
+                                                    if (penghapusanAkhir.equalsIgnoreCase("k")) {
+                                                        llist.hapusAkhir();
+                                                        System.out.println("    Penghapusan Data Akhir berhasil.");
+                                                    }
+                                                    else if (penghapusanAkhir.equalsIgnoreCase("z")){
+                                                        System.out.println();
+                                                    } else System.out.println("    Input tidak valid.");
+                                                } catch (NullPointerException w) {
+                                                    System.out.println("    Tidak ada data yang bisa dihapus");
+                                                }
+                                            } while (!penghapusanAkhir.equalsIgnoreCase("z"));
+                                        break;
+                                        case 2:
+                                            System.out.println("___ Penghapusan Data Tengah Linked List ___"); //Masih kacau, dakpaham cakmano caro ngambek urutan node nyo
+                                            System.out.println("    INFO: - data ke-n akan dihapus.\n" +
                                                 "\t  - Tekan tombol 999 untuk kembali ke menu sebelumnya.");
-                                        int penghapusanTengah = input.nextInt();
-                                        do {
-                                            System.out.print("    n = ");
-                                            penghapusanTengah = input.nextInt();
-                                            DLL.Node trash = new DLL.Node(penghapusanTengah); //dak berhasil
-                                            llist.hapusTengah(trash);
-                                            if (penghapusanTengah != 999 )
-                                                System.out.println("    Data ke " + penghapusanTengah + " berhasil dihapus.");
-                                        } while (penghapusanTengah != 999);
+                                            int penghapusanTengah = input.nextInt();
+                                            do {
+                                                System.out.print("    n = ");
+                                                penghapusanTengah = input.nextInt();
+                                                DLL.Node trash = new DLL.Node(penghapusanTengah); //dak berhasil
+                                                llist.hapusTengah(trash);
+                                                if (penghapusanTengah != 999 )
+                                                    System.out.println("    Data ke " + penghapusanTengah + " berhasil dihapus.");
+                                            } while (penghapusanTengah != 999);
                                         break;
-                                    case 4:
-                                        System.out.println("*** CETAK DATA DOUBLE LINKED LIST ***\n");
-                                        llist.printlist(llist.head);
-                                        System.out.println("\n    INFO: - Input 0 untuk kembali ke menu sebelumnya");
-                                        System.out.print("\n    Input user: ");
-                                        input.nextInt();
-                                        System.out.println();                 
+                                        case 4:
+                                            System.out.println("*** CETAK DATA DOUBLE LINKED LIST ***\n");
+                                            llist.printlist(llist.head);
+                                            System.out.println("\n    INFO: - Input 0 untuk kembali ke menu sebelumnya");
+                                            System.out.print("\n    Input user: ");
+                                            input.nextInt();
+                                            System.out.println();                 
                                         break;
 
-                                    case 5:
-                                    break;
-
-                                    default:
-                                        System.out.println("    Pilihan tidak valid.\n");
+                                        case 5:
                                         break;
-                                }
-                            } while (pilihanPenghapusan != 5);
-                        case 3:
+
+                                        default:
+                                            System.out.println("    Pilihan tidak valid.\n");
+                                        break;
+                                    }
+                                } while (pilihanPenghapusan != 5);
+                            break;
+
+                            case 3:
                             //Pencarian / pengubahan data manual
                             //Muhammad Rizki
 
 
                             break;
-                        case 4:
-                            System.out.println();
+                            case 4:
+                                System.out.println();
                             break;
-                        default:
-                            System.out.println("Input tidak valid.\n");
-                    }
-                }while (pilihanOperasi != 4);
-            case 2:
-                //masukkan segalo pustaka disini
-                //pustaka tambah data
+                            default:
+                                System.out.println("Input tidak valid.\n");
+                        }
+                    }while (pilihanOperasi != 4);
+                break;
 
-                        case 2: //Hapus Data
-                            int pilihanPenghapusan;
-                            String sign;
-                                do{
-                                    System.out.println();
-                                    System.out.println("*** OPERASI HAPUS DATA DOUBLE LINKED LIST ***");
-                                    System.out.println("    1. Hapus Data Awal" + 
-                                                    "\n    2. Hapus Data Tengah" + 
-                                                    "\n    3. Hapus Data Akhir" + 
-                                                    "\n    4. Cetak Data" + 
-                                                    "\n    5. Kembali");
-                                    System.out.print("    Silahkan Pilih (1/2/3/4/5): ");
-                                        pilihan = input.nextInt();
+                case 2:
+                    do{
+                        System.out.println("_-_ PUSTAKA DOUBLE LINKED LIST _-_");
+                        System.out.print("Silahkan pilih operasi yang akan di lakukan :\n" +
+                            "1. Penambahan Data.\n" +
+                            "2. Penghapusan Data.\n" +
+                            "3. Pencarian/pengubahan Data.\n" +
+                            "4. Kembali.\n" +
+                            "Input pilihan : ");
+                        pilihanOperasi = input.nextInt();
+                        System.out.println( );
+                            switch(pilihanOperasi){
+                                case 1:
+                                    //PENAMBAHAN DATA PUSTAKA
 
-
-                                    switch(pilihanPenghapusan){
-
-                                        case 1:
-                                           System.out.println("\n*** OPERASI HAPUS DATA AWAL DOUBLE LINKED LIST ***");
-                                           System.out.println("\n    INFO: - Masukan Y (ENTER) untuk menghapus data \n\t  - Masukan T untuk kembali ke menu sebelumnya\n");
-                                           System.out.println("Yakin ingin menghapus data di awal ? Y ");
-                                           System.out.println("Yakin ingin menghapus data di awal ? Y ");
-                                           System.out.println("( Masukan T )");
-                                               sign = input.next();
-                                               switch(sign){
-                                               case "Y":
-                                               link.removeFirst();
-                                           }
-                                        break;
-                                        case 2:
-                                           System.out.println("\n*** OPERASI HAPUS TENGAH AWAL DOUBLE LINKED LIST ***");
-                                           System.out.println("\n    INFO: - Masukan Y (ENTER) untuk menghapus data \n\t  - Masukan T untuk kembali ke menu sebelumnya\n");
-                                           System.out.println("Yakin ingin menghapus data di tengah ? Y ");
-                                           System.out.println("Yakin ingin menghapus data di tengah ? Y ");
-                                           System.out.println("( Masukan T )");
-                                               sign = input.next();
-                                               switch(sign){
-                                               case "Y":
-                                               link.remove(link.size() / 2);
-                                           }
-                                        break;
-                                        case 3:
-                                           System.out.println("\n*** OPERASI HAPUS DATA AKHIR DOUBLE LINKED LIST ***");
-                                           System.out.println("\n    INFO: - Masukan Y (ENTER) untuk menghapus data \n\t  - Masukan T untuk kembali ke menu sebelumnya\n");
-                                           System.out.println("Yakin ingin menghapus data di akhir ? Y ");
-                                           System.out.println("Yakin ingin menghapus data di akhir ? Y ");
-                                           System.out.println("( Masukan T )"); 
-                                               sign = input.next();
-                                               switch(sign){
-                                               case "Y":
-                                               link.removeLast();
-                                           }
-                                        break;
-                                        case 4:
-                                           System.out.println("adasdsad");
-                                           System.out.println("\n*** CETAK DATA DOUBLE LINKED LIST ***\n");
-                                           System.out.println(link);
-                                           System.out.println("\n    INFO: - Masukan 5 untuk kembali ke menu sebelumnya\n");
-                                               input.nextInt();
-                                        break;
-                                    }
-                                }while(pilihan !=0);
-                                input.close();
+                                break;    
+                                case 2:
+                                    int pilihanPustakaPenghapusan;
+                                    String sign;
+                                    do{
+                                        System.out.println();
+                                        System.out.println("*** OPERASI HAPUS DATA DOUBLE LINKED LIST ***");
+                                        System.out.println("    1. Hapus Data Awal" + 
+                                                "\n    2. Hapus Data Tengah" + 
+                                                "\n    3. Hapus Data Akhir" + 
+                                                "\n    4. Cetak Data" + 
+                                                "\n    5. Kembali");
+                                        System.out.print("    Silahkan Pilih (1/2/3/4/5): ");
+                                        pilihanPustakaPenghapusan = input.nextInt();
+                                        switch(pilihanPustakaPenghapusan){
+                                            case 1:
+                                                System.out.println("\n*** OPERASI HAPUS DATA AWAL DOUBLE LINKED LIST ***");
+                                                System.out.println("\n    INFO: - Masukan Y (ENTER) untuk menghapus data \n\t  - Masukan T untuk kembali ke menu sebelumnya\n");
+                                                System.out.println("    Yakin ingin menghapus data di awal ? Y ");
+                                                System.out.print("    (Masukan Pilihan): ");
+                                                sign = input.next();
+                                                switch(sign){
+                                                    case "Y", "y":
+                                                        link.removeFirst();
+                                                        System.out.println("    Data awal berhasil dihapus.");
+                                                    break;
+                                                }
+                                            break;
+                                            case 2:
+                                                System.out.println("\n*** OPERASI HAPUS DATA TENGAH DOUBLE LINKED LIST ***");
+                                                System.out.println("\n    INFO: - Masukan Y (ENTER) untuk menghapus data \n\t  - Masukan T untuk kembali ke menu sebelumnya\n");
+                                                System.out.println("    Yakin ingin menghapus data di tengah ? Y ");
+                                                System.out.print("    (Masukan Pilihan): ");
+                                                sign = input.next();
+                                                switch(sign){
+                                                    case "Y", "y":
+                                                        link.remove(link.size() / 2);
+                                                        System.out.println("    Data tengah berhasil dihapus.");
+                                                    break;
+                                                }
+                                            break;
+                                            case 3:
+                                                System.out.println("\n*** OPERASI HAPUS DATA AKHIR DOUBLE LINKED LIST ***");
+                                                System.out.println("\n    INFO: - Masukan Y (ENTER) untuk menghapus data \n\t  - Masukan T untuk kembali ke menu sebelumnya\n");
+                                                System.out.println("    Yakin ingin menghapus data di akhir ? Y ");
+                                                System.out.print("    (Masukan Pilihan): "); 
+                                                sign = input.next();
+                                                switch(sign){
+                                                    case "Y", "y":
+                                                        link.removeLast();
+                                                        System.out.println("    Data akhir berhasil dihapus.");
+                                                    break;
+                                                }
+                                            break;
+                                            case 4:
+                                                System.out.println("\n*** CETAK DATA DOUBLE LINKED LIST ***\n");
+                                                System.out.println("    " + link);
+                                                System.out.println("\n    INFO: - Masukan 5 untuk kembali ke menu sebelumnya");
+                                                System.out.print("    ");
+                                                input.nextInt();
+                                            break;
+                                            case 5:
+                                                System.out.println();
+                                            break;
+                                            default:
+                                                System.out.println("    Pilihan tidak valid."); 
+                                        }
+                                    }while(pilihanPustakaPenghapusan != 5);
                                 break;
+                                case 3:
+                                //PENCARIAN/PENGUBAHAN DATA
 
-                                        //pustaka pencarian/pengubahan data
+                                case 4:
+                                break;
+                                default:
+                                    System.out.println("    Pilihan tidak valid.");
+                            }       
+                    }while(pilihanOperasi != 4);
+                break;
 
-
-                                        break;
-                                    case 3:
-                                        System.out.println("Terima kasih telah menggunakan Double Linked List Kel.2");
-                                        break;
-                                    default:
-                                        System.out.println("Input tidak valid.\n");
-                                    }
-                                }while (pilihanLinkedList!=3);
-                                input.close();
+                case 3:
+                    System.out.println("Terima kasih telah menggunakan Double Linked List Kel.2");
+                break;
+                default:
+                    System.out.println("Input tidak valid.\n");
+            }
+        }while (pilihanLinkedList!=3);
+        input.close();
     }
 }
 
