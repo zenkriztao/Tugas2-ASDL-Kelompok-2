@@ -110,24 +110,17 @@ class DLL {
         }
         return false;
     }
-
-    public void hapusTengah(Node trash) {
-        Node remover = head;
-        try {
-            while (remover.next != null) {
-                if (remover.next == trash) {
-                    remover.next = trash.next;
-                    trash.next.prev = remover;
-                    break;
-                }
-                remover = remover.next;
-            }
-        } catch (NullPointerException e) {
-            System.out.println("Data yang dipilih merupakan data awal/data akhir.");
-            System.exit(0);
+    public void hapusTengah(int nilaiData) {
+        Node nodeSekarang = head;
+        Node pembantu = null;
+        while (nodeSekarang != null && nodeSekarang.data != nilaiData) {
+            pembantu = nodeSekarang;
+            nodeSekarang = nodeSekarang.next;
+        }
+        if (nodeSekarang != null) {
+            pembantu.next = nodeSekarang.next;
         }
     }
-    
     public boolean isData() {
         return head == null;
     }
@@ -346,35 +339,48 @@ public class MainDraft {
                     String penghapusanAkhir;
                     do {
                         System.out.print("    Input user : ");
-                        penghapusanAwal = input.nextLine();
-                        if (penghapusanAwal.equalsIgnoreCase("k")) {
+                        penghapusanAkhir = input.nextLine();
+                        if (penghapusanAkhir.equalsIgnoreCase("k")) {
                             if (llist.hapusAkhir()) {
                                 System.out.println("    Penghapusan Data Akhir berhasil.");
                             } else
                                 System.out.println("    Tidak ada data yang bisa dihapus");
-                        } else if (penghapusanAwal.equalsIgnoreCase("z")) {
+                        } else if (penghapusanAkhir.equalsIgnoreCase("z")) {
                             System.out.println();
                         } else 
                             System.out.println(pesanError);
                         
-                    } while (!penghapusanAwal.equalsIgnoreCase("z"));
+                    } while (!penghapusanAkhir.equalsIgnoreCase("z"));
                     break;
                     
                 case 2:
-                    System.out.println("___ Penghapusan Data Tengah Linked List ___"); //Masih kacau, dakpaham cakmano caro ngambek urutan node nyo
-                    System.out.println("    INFO: - data ke-n akan dihapus.\n" +
-                        "\t  - Tekan tombol 999 untuk kembali ke menu.");
-                    int penghapusanTengah;
-                    do {
-                        System.out.print("    n = ");
-                        penghapusanTengah = input.nextInt(); input.nextLine();
-                        DLL.Node trash = new DLL.Node(penghapusanTengah); //dak berhasil
-                        llist.hapusTengah(trash);
-                        if (penghapusanTengah != 999 )
-                            System.out.println("    Data ke " + penghapusanTengah + " berhasil dihapus.");
-                    } while (penghapusanTengah != 999);
+                    System.out.println(
+                            "*** Penghapusan Data Tertentu Linked List ***\n\n" +
+                                    "    Masukkan nilai data yang akan dihapus.\n" +
+                                    "Note : input \"0\" untuk keluar.\n" +
+                                    "       Hanya berfungsi untuk nilai data yang berada di tengah list.");
+                    while (true) {
+                        int dataDicari;
+
+                        System.out.print("\n    Nilai data yang akan dihapus : ");
+                        dataDicari = input.nextInt(); input.nextLine();
+
+                        if (dataDicari == 0) break;
+
+                        if (llist.isExist(dataDicari)) {
+                            try {
+                                llist.hapusTengah(dataDicari);
+                            } catch (NullPointerException e) {
+                                System.out.println("    Data berada di awal list.");
+                                break;
+                            }
+                            System.out.println("    Nilai " + dataDicari + " ditemukan!");
+                            System.out.println("    Data bernilai " + dataDicari + " telah dihapus.");
+                        } else
+                            System.out.println("\n    Data yg dicari tidak ditemukan!");
+                    }
                     break;
-                    
+
                 case 4:
                     llManualCetak(llist);
                     break;
