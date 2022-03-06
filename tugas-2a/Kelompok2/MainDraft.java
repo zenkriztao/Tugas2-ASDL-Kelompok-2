@@ -273,8 +273,8 @@ public class MainDraft {
                                             System.out.println("\n    Data tidak diubah");
                                     }
                                     System.out.println();
-                tungguEnter();
-                break;
+                    tungguEnter();
+                    break;
 
                 case 3: 
                                         if (llist.isData()) {
@@ -391,13 +391,13 @@ public class MainDraft {
         int pilihan;
         int pilihanOperasi;
 
-        /* //data (sementara)
+        //data (sementara)
         link.add(30);
         link.add(20);
         link.add(10);
         link.add(99);
         link.add(200);
-        System.out.println("\nDATA : " + link); */
+        System.out.println("\nDATA : " + link);
 
         do {
             String judul = "*** DOUBLE LINKED LIST ***";
@@ -490,9 +490,8 @@ public class MainDraft {
                                         case 4:
                                             System.out.println("\n*** CETAK DATA DOUBLE LINKED LIST ***\n");
                                             System.out.println("    " + link);
-                                            System.out.println("\n    INFO: - Masukan 5 untuk kembali ke menu sebelumnya");
-                                            System.out.print("    ");
-                                            input.nextInt(); input.nextLine();
+                                            System.out.print("");
+                                            tungguEnter();
                                         break;
                                         case 5:
                                             System.out.println();
@@ -503,8 +502,57 @@ public class MainDraft {
                                 }while(pilihanPustakaPenghapusan != 5);
                             break;
                             case 3:
-                            //PENCARIAN/PENGUBAHAN DATA
-
+                                int pilihanPustakaPencarian;
+                                int dataPengganti;
+                                do{
+                                    System.out.println();
+                                    System.out.println("*** OPERASI Pencarian/Pengubahan DATA DOUBLE LINKED LIST ***");
+                                    System.out.println("    1. Pencarian/Pengubahan Data Awal" + 
+                                                "\n    2. Pencarian/Pengubahan Data Tengah" + 
+                                                "\n    3. Pencarian/Pengubahan Data Akhir" + 
+                                                "\n    4. Cetak Data" + 
+                                                "\n    5. Kembali");
+                                    System.out.print("    Silahkan Pilih (1/2/3/4/5): ");
+                                    pilihanPustakaPencarian = input.nextInt();
+                 
+                                    switch(pilihanPustakaPencarian){
+                 
+                                        case 1 : 
+                                            System.out.print("Data Awal sekarang : "  + link.getFirst() + "\nMasukan data pengubah : " );
+                                                dataPengganti = input.nextInt();
+                 
+                                            link.set(link.indexOf(link.getFirst()), dataPengganti );
+                                            //System.out.println("[" + llist.getFirst() + "]");
+                                        break;
+                 
+                                        case 2 :
+                                            System.out.print("Data Tengah sekarang : "  + link.get(link.size() / 2) + "\nMasukan data pengubah : ");
+                                                dataPengganti = input.nextInt();
+                                        
+                                            link.set(link.size() / 2, dataPengganti);
+                                            //System.out.println("[" + llist.get(llist.size() / 2) + "]");
+                                        break;    
+                 
+                                        case 3 :
+                                            System.out.print("Data Akhir sekarang : "  + link.getLast() + "\nMasukan data pengubah : ");
+                                                dataPengganti = input.nextInt();
+                                        
+                                            link.set(link.size() - 1, dataPengganti);
+                                            //System.out.println("[" + llist.getLast() + "]");
+                                        break;
+                 
+                                        case 4:
+                                            System.out.println("\n*** CETAK DATA DOUBLE LINKED LIST ***\n");
+                                            System.out.println("    " + link);
+                                            System.out.print("");
+                                            tungguEnter();
+                                        break;      
+                                        case 5:
+                                        break;
+                                }
+                            }while(pilihanPustakaPencarian !=5);
+                            break;
+                        
                             case 4:
                             break;
                             default:
