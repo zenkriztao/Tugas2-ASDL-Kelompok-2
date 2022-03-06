@@ -644,7 +644,7 @@ public class MainDraft {
                                         System.out.println("    " + link);
                                         System.out.print("    Tambah data tengah : ");
                                         int tengah = input.nextInt();
-                                        link.add(2, tengah);
+                                        link.add(link.size() / 2, tengah);
                                         System.out.println("    " + link);
                                     break;
                                     case 3:
