@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 ////////////////// KELOMPOK 2 ASDL //////////////////
-
 public class MainDraft {
     static Scanner input = new Scanner(System.in);
     static String pesanError = "Input tidak valid!";
@@ -454,7 +453,7 @@ public class MainDraft {
                                         System.out.println("    " + link);
                                         System.out.print("    Tambah data tengah : ");
                                         int tengah = input.nextInt();
-                                        link.add(2, tengah);
+                                        link.add(link.size() / 2, tengah);
                                         System.out.println("    " + link);
                                     break;
                                     case 3:
@@ -546,8 +545,9 @@ public class MainDraft {
                                 }while(pilihanPustakaPenghapusan != 5);
                             break;
                             case 3:
-                            int pilihanPustakaPencarian;
+                                int pilihanPustakaPencarian;
                                 int dataPengganti;
+                                String opsiUbah;
                                 do{
                                     System.out.println();
                                     System.out.println("*** OPERASI Pencarian/Pengubahan DATA DOUBLE LINKED LIST ***");
@@ -560,25 +560,64 @@ public class MainDraft {
                                     pilihanPustakaPencarian = input.nextInt();
                                     switch(pilihanPustakaPencarian){
                                         case 1 : 
-                                            System.out.print("    Data Awal sekarang : "  + link.getFirst() + "\n    Masukan data pengubah : " );
-                                                dataPengganti = input.nextInt();
-                 
-                                            link.set(link.indexOf(link.getFirst()), dataPengganti );
-                                            //System.out.println("[" + llist.getFirst() + "]");
+                                        System.out.print("    Data Awal sekarang : "  + link.getFirst() + "\n");
+                                        System.out.println("    INFO: - Input Y untuk mengubah data awal." +
+                                                            "\n\t  - Input N jika tidak mengubah data awal.");
+                                        System.out.print("    Pilihan anda: ");
+                                        opsiUbah = input.next(); input.nextLine();
+                                        switch(opsiUbah){
+                                            case "y", "Y":
+                                                System.out.print("    Masukkan data pengubah: ");
+                                                dataPengganti = input.nextInt(); input.nextLine();
+                                                link.set(link.indexOf(link.getFirst()), dataPengganti );
+                                            break;
+                                            case "n", "N":
+                                                System.out.println("    Anda tidak menginput data");
+                                            break;
+                                            default:
+                                                System.out.println("    Input anda salah");
+                                            break;
+                                        }
                                         break;
                                         case 2 :
-                                            System.out.print("    Data Tengah sekarang : "  + link.get(link.size() / 2) + "\n    Masukan data pengubah : ");
-                                                dataPengganti = input.nextInt();
-                                        
-                                            link.set(link.size() / 2, dataPengganti);
-                                            //System.out.println("[" + llist.get(llist.size() / 2) + "]");
+                                            System.out.print("    Data Tengah sekarang : "  + link.get(link.size() / 2) + "\n");
+                                            System.out.println("    INFO: - Input Y untuk mengubah data tengah." +
+                                                                "\n\t  - Input N jika tidak mengubah data tengah.");
+                                            System.out.print("    Pilihan anda: ");
+                                            opsiUbah = input.next(); input.nextLine();
+                                            switch(opsiUbah){
+                                                case "y", "Y":
+                                                    System.out.print("    Masukkan data pengubah: ");
+                                                    dataPengganti = input.nextInt(); input.nextLine();
+                                                    link.set(link.size() / 2, dataPengganti);
+                                                break;
+                                                case "n", "N":
+                                                    System.out.println("    Anda tidak menginput data");
+                                                break;
+                                                default:
+                                                    System.out.println("    Input anda salah");
+                                                break;
+                                            }
                                         break;    
                                         case 3 :
-                                            System.out.print("    Data Akhir sekarang : "  + link.getLast() + "\n    Masukan data pengubah : ");
-                                                dataPengganti = input.nextInt();
-                                        
-                                            link.set(link.size() - 1, dataPengganti);
-                                            //System.out.println("[" + llist.getLast() + "]");
+                                            System.out.print("    Data Akhir sekarang : "  + link.getLast() + "\n");
+                                            System.out.println("    INFO: - Input Y untuk mengubah data akhir." +
+                                                                "\n\t  - Input N jika tidak mengubah data akhir.");
+                                            System.out.print("    Pilihan anda: ");
+                                            opsiUbah = input.next(); input.nextLine();
+                                            switch(opsiUbah){
+                                                case "y", "Y":
+                                                    System.out.print("    Masukkan data pengubah: ");
+                                                    dataPengganti = input.nextInt(); input.nextLine();
+                                                    link.set(link.size() - 1, dataPengganti);
+                                                break;
+                                                case "n", "N":
+                                                    System.out.println("    Anda tidak menginput data");
+                                                break;
+                                                default:
+                                                    System.out.println("    Input anda salah");
+                                                break;
+                                            }
                                         break;
                                         case 4:
                                             System.out.println("\n*** CETAK DATA DOUBLE LINKED LIST ***\n");
