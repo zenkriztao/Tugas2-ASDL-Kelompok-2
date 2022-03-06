@@ -407,7 +407,7 @@ public class MainDraft {
             
             switch (pilihan) {
                 case 1: 
-                                    if (llist.isData()) {. // jika data node head masih kosong, tampilkan pesan kembali user
+                                    if (llist.isData()) { // jika data node head masih kosong, tampilkan pesan kembali user
                                         System.out.println("List data masih kosong.");
                                         tungguEnter();
                                     } else {
