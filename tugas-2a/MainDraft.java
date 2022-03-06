@@ -407,89 +407,89 @@ public class MainDraft {
             
             switch (pilihan) {
                 case 1: 
-                                    if (llist.isData()) { // jika data node head masih kosong, tampilkan pesan kembali user
-                                        System.out.println("List data masih kosong.");
-                                        tungguEnter();
-                                    } else {
-                                        System.out.println(
-                                            "*** PENCARIAN/PENGUBAHAN DATA TERTENTU ***\n\n" +
-                                            "    INFO: - Isi 'dicari' dgn 0 untuk kembali ke menu.\n" +
-                                            "          - Isi 'Mengubah Data menjadi : ' dgn 0 untuk tidak mengubah."
-                                        );
-                                        while (true) {
-                                            int dataLama;
-                                            int dataBaru;
+                    if (llist.isData()) { // jika data node head masih kosong, tampilkan pesan kembali user
+                        System.out.println("List data masih kosong.");
+                        tungguEnter();
+                    } else {
+                        System.out.println(
+                            "*** PENCARIAN/PENGUBAHAN DATA TERTENTU ***\n\n" +
+                            "    INFO: - Isi 'dicari' dgn 0 untuk kembali ke menu.\n" +
+                            "          - Isi 'Mengubah Data menjadi : ' dgn 0 untuk tidak mengubah."
+                        );
+                    while (true) {
+                        int dataLama;
+                        int dataBaru;
                                             
-                                            System.out.print("\n    Data yg dicari : ");
-                                            dataLama = input.nextInt(); input.nextLine();
+                        System.out.print("\n    Data yg dicari : ");
+                        dataLama = input.nextInt(); input.nextLine();
                                             
-                                            if (dataLama == 0) break;
+                        if (dataLama == 0) break;
                                             
-                                            if (llist.isExist(dataLama)) {
-                                                System.out.print("    -> Mengubah Data menjadi   : "); // membuat statement tanyakan user jika ingin mengubah data atau tidak
-                                                dataBaru = input.nextInt(); input.nextLine();
-                                                if (dataBaru != 0) { // membuat perkondisian data
-                                                    // data diperbarui
-                                                    boolean isUpdDone = llist.cariData(dataLama, dataBaru);
-                                                    System.out.println("\n    Data berhasil diubah : " + dataLama + " -> " + dataBaru);
-                                                } else
-                                                    System.out.println("\n    Data tidak bisa diubah");
-                                            } else 
-                                                System.out.println("\n    Data yg dicari tidak ditemukan!");
-                                        }
-                                    }
-                                    System.out.println();
-                                    break;
+                        if (llist.isExist(dataLama)) {
+                            System.out.print("    -> Mengubah Data menjadi   : "); // membuat statement tanyakan user jika ingin mengubah data atau tidak
+                            dataBaru = input.nextInt(); input.nextLine();
+                        if (dataBaru != 0) { // membuat perkondisian data
+                            // data diperbarui
+                            boolean isUpdDone = llist.cariData(dataLama, dataBaru);
+                            System.out.println("\n    Data berhasil diubah : " + dataLama + " -> " + dataBaru);
+                        } else
+                            System.out.println("\n    Data tidak bisa diubah");
+                        } else 
+                            System.out.println("\n    Data yg dicari tidak ditemukan!");
+                        }
+                    }
+                    System.out.println();
+                break;
                     
-                                    case 2:
-                                    if (llist.isData()) {
-                                        System.out.println("List data masih kosong.");
-                                    } else {
-                                        int dataLama = llist.head.data;
-                                        int dataBaru;
+                case 2:
+                    if (llist.isData()) {
+                        System.out.println("List data masih kosong.");
+                    } else {
+                        int dataLama = llist.head.data;
+                        int dataBaru;
                                         
-                                        System.out.print(
-                                            "*** PENGUBAHAN DATA DOUBLE LINKED LIST MANUAL AWAL ***\n\n" +
-                                            "    INFO: - Isi 'Akan diubah menjadi' dgn 0 untuk tidak mengubah.\n\n" +
-                                            "    Data awal      : " + dataLama + "\n" +
-                                            "    -> Akan diubah menjadi     : "
-                                        );
-                                        dataBaru = input.nextInt(); input.nextLine();
-                                        if (dataBaru != 0) { // cek kondisi data lama dari node
-                                            // data berhasil diperbarui
-                                            llist.head.data = dataBaru;
-                                            System.out.println("\n    Data berhasil diubah : " + dataLama + " -> " + dataBaru);
-                                        } else
-                                            System.out.println("\n    Data tidak diubah");
-                                    }
-                                    System.out.println();
-                tungguEnter();
+                        System.out.print(
+                            "*** PENGUBAHAN DATA DOUBLE LINKED LIST MANUAL AWAL ***\n\n" +
+                            "    INFO: - Isi 'Akan diubah menjadi' dgn 0 untuk tidak mengubah.\n\n" +
+                            "    Data awal      : " + dataLama + "\n" +
+                            "    -> Akan diubah menjadi     : "
+                        );
+                        dataBaru = input.nextInt(); input.nextLine();
+                        if (dataBaru != 0) { // cek kondisi data lama dari node
+                            // data berhasil diperbarui
+                            llist.head.data = dataBaru;
+                            System.out.println("\n    Data berhasil diubah : " + dataLama + " -> " + dataBaru);
+                        } else
+                            System.out.println("\n    Data tidak diubah");
+                    }
+                    System.out.println();
+                    tungguEnter();
                 break;
 
                 case 3: 
-                                        if (llist.isData()) {
-                                            System.out.println("List data masih kosong.");
-                                        } else {
-                                            int dataLama = llist.tail.data;
-                                            int dataBaru;
+                    if (llist.isData()) {
+                        System.out.println("List data masih kosong.");
+                    } else {
+                        int dataLama = llist.tail.data;
+                        int dataBaru;
                                             
-                                            System.out.print(
-                                                "*** PENGUBAHAN DATA DOUBLE LINKED LIST MANUAL AKHIR ***\n\n" +
-                                                "    INFO: - Isi 'Akan diubah menjadi' dgn 0 untuk tidak mengubah.\n\n" +
-                                                "    Data akhir     : " + dataLama + "\n" +
-                                                "    -> Akan diubah menjadi     : "
-                                            );
-                                            dataBaru = input.nextInt(); input.nextLine();
-                                            if (dataBaru != 0) {
-                                                // data berhasil diperbarui 
-                                                llist.tail.data = dataBaru;
-                                                System.out.println("\n    Data berhasil diubah : " + dataLama + " -> " + dataBaru);
-                                            } else
-                                                System.out.println("\n    Data tidak diubah");
-                                        }
-                                        System.out.println();
+                        System.out.print(
+                            "*** PENGUBAHAN DATA DOUBLE LINKED LIST MANUAL AKHIR ***\n\n" +
+                            "    INFO: - Isi 'Akan diubah menjadi' dgn 0 untuk tidak mengubah.\n\n" +
+                            "    Data akhir     : " + dataLama + "\n" +
+                            "    -> Akan diubah menjadi     : "
+                        );
+                        dataBaru = input.nextInt(); input.nextLine();
+                        if (dataBaru != 0) {
+                            // data berhasil diperbarui 
+                            llist.tail.data = dataBaru;
+                            System.out.println("\n    Data berhasil diubah : " + dataLama + " -> " + dataBaru);
+                        } else
+                            System.out.println("\n    Data tidak diubah");
+                    }
+                    System.out.println();
                     tungguEnter();
-                    break;
+                break;
                     
                 case 4:
                     llManualCetak(llist);
