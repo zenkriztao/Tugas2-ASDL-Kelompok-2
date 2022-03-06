@@ -68,12 +68,12 @@ public class MainDraft {
                                 int d = input.nextInt(); input.nextLine();
                                 llist.insertAfter(llist.nodeOf(dataDicari), d);
                                 System.out.println("    Data tengah berhasil diinput.\n");
-                            }catch(NullPointerException e){
-                                System.out.println("    Data berada di awal list.\n");
+                            }catch(Exception e){
+                                System.out.println("    Error terjadi, mohon dicek kembali.\n");
                                 break;
                             }
                         }else {
-                            System.out.println("    Data yang dicari tidak ditemukan.");
+                            System.out.println("    Data yang dicari tidak ditemukan.\n");
                         }
                     }
                     break;
@@ -336,7 +336,7 @@ public class MainDraft {
     static void llManualCetak(DLL llist) {
         System.out.println("*** CETAK DATA DOUBLE LINKED LIST ***\n");
         llist.printlist();
-        System.out.println();
+        System.out.println("\n");
         tungguEnter();
     }
     
