@@ -364,7 +364,7 @@ public class MainDraft {
                     System.out.println("___ Penghapusan Data Tengah Linked List ___"); //Masih kacau, dakpaham cakmano caro ngambek urutan node nyo
                     System.out.println("    INFO: - data ke-n akan dihapus.\n" +
                         "\t  - Tekan tombol 999 untuk kembali ke menu.");
-                    int penghapusanTengah = input.nextInt(); input.nextLine();
+                    int penghapusanTengah;
                     do {
                         System.out.print("    n = ");
                         penghapusanTengah = input.nextInt(); input.nextLine();
@@ -620,62 +620,54 @@ public class MainDraft {
                         System.out.println( );
                         switch(pilihanOperasi){
                             case 1:
-                                //PENAMBAHAN DATA PUSTAKA
-                                int pilihanPenambahanData;
-
+                            int pilihanPenambahanData;
+                            do{
                                 System.out.println("\n*** OPERASI TAMBAH DATA DOUBLE LINKED LIST ***");
-                                System.out.println("1. Tambah Data Awal");
-                                System.out.println("2. Tambah Data Tengah");
-                                System.out.println("3. Tambah Data Akhir");
-                                System.out.println("4. Cetak Data");
-                                System.out.println("5. Kembali");
-                    
-                                System.out.print("Silahkan pilih [1/2/3/4/5] : ");
-
+                                System.out.println("    1. Tambah Data Awal");
+                                System.out.println("    2. Tambah Data Tengah");
+                                System.out.println("    3. Tambah Data Akhir");
+                                System.out.println("    4. Cetak Data");
+                                System.out.println("    5. Kembali");
+                                System.out.print("    Silahkan pilih [1/2/3/4/5] : ");
                                 pilihanPenambahanData = input.nextInt();
 
                                 switch(pilihanPenambahanData){
                                     case 1:
-                                    System.out.println(link);
-                                    System.out.print("Tambah data awal : ");
-                                    int awal = input.nextInt();
-                                    link.addFirst(awal);
-                                    System.out.println(link);
+                                        System.out.println("    " + link);
+                                        System.out.print("    Tambah data awal : ");
+                                        int awal = input.nextInt();
+                                        link.addFirst(awal);
+                                        System.out.println("    " + link);
                                     break;
-
-                                    case 2:
-                                    System.out.println("*** OPERASI TAMBAH DATA TENGAH DOUBLE LINKED LIST ***");
-                                    System.out.println(link);
-                                    System.out.print("Tambah data tengah : ");
-                                    int tengah = input.nextInt();
-                                    link.add(2, tengah);
-                                    System.out.println(link);
+                                    case 2: 
+                                        System.out.println("*** OPERASI TAMBAH DATA TENGAH DOUBLE LINKED LIST ***");
+                                        System.out.println("    " + link);
+                                        System.out.print("    Tambah data tengah : ");
+                                        int tengah = input.nextInt();
+                                        link.add(2, tengah);
+                                        System.out.println("    " + link);
                                     break;
-
                                     case 3:
-                                    System.out.println(link);
-                                    System.out.print("Tambah data akhir : ");
-                                    int akhir = input.nextInt();
-                                    link.addLast(akhir);
-                                    System.out.println(link);
+                                        System.out.println("    " + link);
+                                        System.out.print("    Tambah data akhir : ");
+                                        int akhir = input.nextInt();
+                                        link.addLast(akhir);
+                                        System.out.println("    " + link);
                                     break;
-
                                     case 4:
-                                    System.out.println("*** DATA LINKED LIST***");
-                                    System.out.println(link);
+                                        System.out.println("\n*** CETAK DATA DOUBLE LINKED LIST***\n");
+                                        System.out.println("    " + link);
+                                        System.out.println();
                                     break;
-
                                     case 5:
-                                    System.out.println("    " + link);
-                                    System.out.println("\n    INFO: - Masukan 5 untuk kembali ke menu sebelumnya");
-                                    System.out.print("    ");
-                                    input.nextInt(); input.nextLine();
+                                        System.out.println();
+                                    break;
+                                    default:
+                                        System.out.println("    Data tidak valid.");
+                                    break;
                                 }
-
-                                  
-
-        System.out.print("Silahkan pilih [1/2/3/4] : ");
-                                break;    
+                            }while(pilihanPenambahanData != 5);
+                        break;  
                             case 2:
                                 int pilihanPustakaPenghapusan;
                                 String sign;
@@ -733,9 +725,7 @@ public class MainDraft {
                                         case 4:
                                             System.out.println("\n*** CETAK DATA DOUBLE LINKED LIST ***\n");
                                             System.out.println("    " + link);
-                                            System.out.println("\n    INFO: - Masukan 5 untuk kembali ke menu sebelumnya");
-                                            System.out.print("    ");
-                                            input.nextInt(); input.nextLine();
+                                            System.out.println();
                                         break;
                                         case 5:
                                             System.out.println();
@@ -746,7 +736,54 @@ public class MainDraft {
                                 }while(pilihanPustakaPenghapusan != 5);
                             break;
                             case 3:
-                            //PENCARIAN/PENGUBAHAN DATA
+                            int pilihanPustakaPencarian;
+                                int dataPengganti;
+                                do{
+                                    System.out.println();
+                                    System.out.println("*** OPERASI Pencarian/Pengubahan DATA DOUBLE LINKED LIST ***");
+                                    System.out.println("    1. Pencarian/Pengubahan Data Awal" + 
+                                                "\n    2. Pencarian/Pengubahan Data Tengah" + 
+                                                "\n    3. Pencarian/Pengubahan Data Akhir" + 
+                                                "\n    4. Cetak Data" + 
+                                                "\n    5. Kembali");
+                                    System.out.print("    Silahkan Pilih (1/2/3/4/5): ");
+                                    pilihanPustakaPencarian = input.nextInt();
+                                    switch(pilihanPustakaPencarian){
+                                        case 1 : 
+                                            System.out.print("    Data Awal sekarang : "  + link.getFirst() + "\n    Masukan data pengubah : " );
+                                                dataPengganti = input.nextInt();
+                 
+                                            link.set(link.indexOf(link.getFirst()), dataPengganti );
+                                            //System.out.println("[" + llist.getFirst() + "]");
+                                        break;
+                                        case 2 :
+                                            System.out.print("    Data Tengah sekarang : "  + link.get(link.size() / 2) + "\n    Masukan data pengubah : ");
+                                                dataPengganti = input.nextInt();
+                                        
+                                            link.set(link.size() / 2, dataPengganti);
+                                            //System.out.println("[" + llist.get(llist.size() / 2) + "]");
+                                        break;    
+                                        case 3 :
+                                            System.out.print("    Data Akhir sekarang : "  + link.getLast() + "\n    Masukan data pengubah : ");
+                                                dataPengganti = input.nextInt();
+                                        
+                                            link.set(link.size() - 1, dataPengganti);
+                                            //System.out.println("[" + llist.getLast() + "]");
+                                        break;
+                                        case 4:
+                                            System.out.println("\n*** CETAK DATA DOUBLE LINKED LIST ***\n");
+                                            System.out.println("    " + link);
+                                            System.out.println();
+                                        break;      
+                                        case 5:
+                                            System.out.println();
+                                        break;
+                                        default:
+                                            System.out.println("    Data tidak valid.");
+                                        break;
+                                    }
+                                }while(pilihanPustakaPencarian !=5);
+                            break;
 
                             case 4:
                             break;
