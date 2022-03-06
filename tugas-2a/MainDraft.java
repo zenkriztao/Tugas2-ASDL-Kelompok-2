@@ -167,22 +167,13 @@ class DLL {
 
     public void printlist() {
         Node last = head;
-        System.out.println("    Urutan data dari depan");
         System.out.print("    ");
+        System.out.print("[ ");
         while (last != null) {
             System.out.print(last.data + " ");
             last = last.next;
         }
-        
-        last = tail;
-        System.out.println();
-        System.out.println("    Urutan data kebalikan");
-        System.out.print("    ");
-        while (last != null) {
-            System.out.print(last.data + " ");
-            last = last.prev;
-        }
-        System.out.println();
+        System.out.print("]");
     }
 }
 
@@ -237,23 +228,29 @@ public class MainDraft {
                         "*** OPERASI TAMBAH DATA TENGAH DOUBLE LINKED LIST ***\n\n" +
                         "    INFO: - Masukkan data angka (integer) \n" +
                         "\t  - Input 0 untuk kembali ke menu\n");
-                    do {
-                        try{
-                            for (int i = 1; i <= 100000000; i++) {
-                                System.out.print("    Data ke-" + i + ": ");
+                    while(true){
+                        int dataDicari;
+                        llist.printlist();
+                        System.out.println("\n    Input 0 untuk kembali ke menu");
+                        System.out.print("    Masukkan data tengah yang ingin diinput setelahnya: ");
+                        dataDicari = input.nextInt(); input.nextLine();
+
+                        if(dataDicari == 0) break;
+
+                        if(llist.isExist(dataDicari)){
+                            try{
+                                System.out.print("    Input data tengah: ");
                                 int d = input.nextInt(); input.nextLine();
-                                if (d == 0) {
-                                    sign = false;
-                                    break;
-                                }
-                                llist.insertAfter(llist.head.next, d);
+                                llist.insertAfter(llist.nodeOf(dataDicari), d);
+                                System.out.println("    Data tengah berhasil diinput.\n");
+                            }catch(NullPointerException e){
+                                System.out.println("    Data berada di awal list.\n");
+                                break;
                             }
-                        }catch (NullPointerException e){
-                            System.out.println("    Anda harus menambahkan data dulu untuk mengakses fitur ini.\n");
-                            break;
+                        }else {
+                            System.out.println("    Data yang dicari tidak ditemukan.");
                         }
-                        System.out.println();
-                    } while (sign == true);
+                    }
                     break;
 
                 case 3:
@@ -357,12 +354,13 @@ public class MainDraft {
                     System.out.println(
                             "*** Penghapusan Data Tertentu Linked List ***\n\n" +
                                     "    Masukkan nilai data yang akan dihapus.\n" +
-                                    "Note : input \"0\" untuk keluar.\n" +
-                                    "       Hanya berfungsi untuk nilai data yang berada di tengah list.");
+                                    "    Note : input \"0\" untuk keluar.\n" +
+                                    "    Hanya berfungsi untuk nilai data yang berada di tengah list.\n");
                     while (true) {
                         int dataDicari;
-
-                        System.out.print("\n    Nilai data yang akan dihapus : ");
+                        llist.printlist();
+                        System.out.println("\n\n    Input 0 untuk keluar");
+                        System.out.print("    Nilai data yang akan dihapus : ");
                         dataDicari = input.nextInt(); input.nextLine();
 
                         if (dataDicari == 0) break;
@@ -375,9 +373,9 @@ public class MainDraft {
                                 break;
                             }
                             System.out.println("    Nilai " + dataDicari + " ditemukan!");
-                            System.out.println("    Data bernilai " + dataDicari + " telah dihapus.");
+                            System.out.println("    Data bernilai " + dataDicari + " telah dihapus.\n");
                         } else
-                            System.out.println("\n    Data yg dicari tidak ditemukan!");
+                            System.out.println("\n    Data yg dicari tidak ditemukan!\n");
                     }
                     break;
 
@@ -586,14 +584,6 @@ public class MainDraft {
         LinkedList link = new LinkedList();
         int pilihan;
         int pilihanOperasi;
-
-        /* //data (sementara)
-        link.add(30);
-        link.add(20);
-        link.add(10);
-        link.add(99);
-        link.add(200);
-        System.out.println("\nDATA : " + link); */
 
         do {
             String judul = "*** DOUBLE LINKED LIST ***";

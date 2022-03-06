@@ -110,20 +110,15 @@ class DLL {
         return false;
     }
 
-    public void hapusTengah(Node trash) {
-        Node remover = head;
-        try {
-            while (remover.next != null) {
-                if (remover.next == trash) {
-                    remover.next = trash.next;
-                    trash.next.prev = remover;
-                    break;
-                }
-                remover = remover.next;
-            }
-        } catch (NullPointerException e) {
-            System.out.println("Data yang dipilih merupakan data awal/data akhir.");
-            System.exit(0);
+    public void hapusTengah(int nilaiData) {
+        Node nodeSekarang = head;
+        Node pembantu = null;
+        while (nodeSekarang != null && nodeSekarang.data != nilaiData) {
+            pembantu = nodeSekarang;
+            nodeSekarang = nodeSekarang.next;
+        }
+        if (nodeSekarang != null) {
+            pembantu.next = nodeSekarang.next;
         }
     }
     
@@ -173,21 +168,12 @@ class DLL {
 
     public void printlist() {
         Node last = head;
-        System.out.println("    Urutan data dari depan");
         System.out.print("    ");
+        System.out.print("[ ");
         while (last != null) {
             System.out.print(last.data + " ");
             last = last.next;
         }
-        
-        last = tail;
-        System.out.println();
-        System.out.println("    Urutan data kebalikan");
-        System.out.print("    ");
-        while (last != null) {
-            System.out.print(last.data + " ");
-            last = last.prev;
-        }
-        System.out.println();
+        System.out.println("]");
     }
 }
