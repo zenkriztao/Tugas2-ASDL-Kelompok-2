@@ -1,7 +1,5 @@
 package Kelompok2;
 
-    /////////// CLASS MANUAL DOUBLE LINKED LIST ////////////
-
 class DLL {
 
     static class Node {
@@ -14,7 +12,7 @@ class DLL {
         }
     }
     
-    /////////////////// KELOMPOK 2 ASDL ////////////////////
+    /////////// KELOMPOK 2 ASDL ////////////
     
     Node head = null;
     Node tail = null;
