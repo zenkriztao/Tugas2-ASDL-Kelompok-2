@@ -407,7 +407,7 @@ public class MainDraft {
             
             switch (pilihan) {
                 case 1: 
-                                    if (llist.isData()) {
+                                    if (llist.isData()) {. // jika data node head masih kosong, tampilkan pesan kembali user
                                         System.out.println("List data masih kosong.");
                                         tungguEnter();
                                     } else {
@@ -426,10 +426,10 @@ public class MainDraft {
                                             if (dataLama == 0) break;
                                             
                                             if (llist.isExist(dataLama)) {
-                                                System.out.print("    -> Mengubah Data menjadi   : ");
+                                                System.out.print("    -> Mengubah Data menjadi   : "); // membuat statement tanyakan user jika ingin mengubah data atau tidak
                                                 dataBaru = input.nextInt(); input.nextLine();
-                                                if (dataBaru != 0) {
-                                                    // updating
+                                                if (dataBaru != 0) { // membuat perkondisian data
+                                                    // data diperbarui
                                                     boolean isUpdDone = llist.cariData(dataLama, dataBaru);
                                                     System.out.println("\n    Data berhasil diubah : " + dataLama + " -> " + dataBaru);
                                                 } else
@@ -455,8 +455,8 @@ public class MainDraft {
                                             "    -> Akan diubah menjadi     : "
                                         );
                                         dataBaru = input.nextInt(); input.nextLine();
-                                        if (dataBaru != 0) {
-                                            // updating
+                                        if (dataBaru != 0) { // cek kondisi data lama dari node
+                                            // data berhasil diperbarui
                                             llist.head.data = dataBaru;
                                             System.out.println("\n    Data berhasil diubah : " + dataLama + " -> " + dataBaru);
                                         } else
@@ -481,7 +481,7 @@ public class MainDraft {
                                             );
                                             dataBaru = input.nextInt(); input.nextLine();
                                             if (dataBaru != 0) {
-                                                // updating
+                                                // data berhasil diperbarui 
                                                 llist.tail.data = dataBaru;
                                                 System.out.println("\n    Data berhasil diubah : " + dataLama + " -> " + dataBaru);
                                             } else
