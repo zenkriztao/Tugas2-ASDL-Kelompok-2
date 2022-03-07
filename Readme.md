@@ -2,16 +2,15 @@
 
 <img src="https://www.pngitem.com/pimgs/m/174-1746632_java-logo-transparent-png-java-programming-language-logo.png" width="100">
 
+A Doubly Linked List (DLL) contains an extra pointer, typically called previous pointer, together with next pointer and data which are there in singly linked list.
+
+Linked List is a part of the Collection framework present in java.util package. This class is an implementation of the LinkedList data structure which is a linear data structure where the elements are not stored in contiguous locations and every element is a separate object with a data part and address part. The elements are linked using pointers and addresses. Each element is known as a node. Due to the dynamicity and ease of insertions and deletions, they are preferred over the arrays. It also has a few disadvantages like the nodes cannot be accessed directly instead we need to start from the head and follow through the link to reach a node we wish to access.
+
 # Informasi
 
 Folder didalam tugas-2a berisikan file gabungan antara tugas-2a dan tugas-2b dan folder tugas-2b menjadi draft contoh pustaka tugas-2b
 
 <img src="https://i.ibb.co/XpFqxTK/Screen-Shot-2022-03-07-at-09-26-15.png" width="300">
-
-
-A Doubly Linked List (DLL) contains an extra pointer, typically called previous pointer, together with next pointer and data which are there in singly linked list.
-
-Linked List is a part of the Collection framework present in java.util package. This class is an implementation of the LinkedList data structure which is a linear data structure where the elements are not stored in contiguous locations and every element is a separate object with a data part and address part. The elements are linked using pointers and addresses. Each element is known as a node. Due to the dynamicity and ease of insertions and deletions, they are preferred over the arrays. It also has a few disadvantages like the nodes cannot be accessed directly instead we need to start from the head and follow through the link to reach a node we wish to access.
 
 
 Dosen Pembimbing : Dr.Abdiansyah, S.Kom., M.Cs.
