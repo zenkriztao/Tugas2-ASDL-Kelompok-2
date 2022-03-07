@@ -1,8 +1,13 @@
 # Tugas 2 ASDL Kelompok 2 (Double Linked List)
 
-[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/569/badge)]
-
 <img src="https://www.pngitem.com/pimgs/m/174-1746632_java-logo-transparent-png-java-programming-language-logo.png" width="100">
+
+# Informasi
+
+Folder didalam tugas-2a berisikan file gabungan antara tugas-2a dan tugas-2b dan folder tugas-2b menjadi draft contoh pustaka tugas-2b
+
+<img src="https://i.ibb.co/XpFqxTK/Screen-Shot-2022-03-07-at-09-26-15.png" width="300">
+
 
 A Doubly Linked List (DLL) contains an extra pointer, typically called previous pointer, together with next pointer and data which are there in singly linked list.
 
@@ -32,7 +37,7 @@ git clone https://github.com/zenkriztao/Tugas2-ASDL-Kelompok-2
 cd Tugas2-ASDL-Kelompok-2
 git init
 git add [file]
-git commit -m [pesan]
+git commit -m ["pesan"]
 git remote add origin [branch]
 git push -u origin [branch]
 
