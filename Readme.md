@@ -41,5 +41,8 @@ git remote add origin [branch]
 git push -u origin [branch]
 
 ```
+## Hasil Compile 
+
+<img src="https://i.ibb.co/511qM5T/Screen-Shot-2022-05-16-at-21-12-05.png" width="1000">
 
 Lisensi MIT 
